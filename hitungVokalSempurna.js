@@ -7,22 +7,27 @@ const hitungVokalSempurna = () => {
     e: 0,
     o: 0,
   };
+  // process.argv sebagai funtion mengambil data di command line
   let argumen = process.argv;
+  // argumen[2] untuk mengambil data dari array yang ada di command line index ke 2
   console.log("Kalimat:", argumen[2]);
-  const kata = argumen[2].split("");
-  for (let i = 0; i < kata.length; i++) {
-    if (kata[i] === "a") {
+  // ini kita memecah kalimat menjadi per-huruf
+  const huruf = argumen[2].split("");
+  // kita akan melooping data yang sudah terurai dan menambahkan setiap huruf yang sama ke value di variable hasil
+  for (let i = 0; i < huruf.length; i++) {
+    if (huruf[i] === "a") {
       hasil.a++;
-    } else if (kata[i] === "i") {
+    } else if (huruf[i] === "i") {
       hasil.i++;
-    } else if (kata[i] === "u") {
+    } else if (huruf[i] === "u") {
       hasil.u++;
-    } else if (kata[i] === "e") {
+    } else if (huruf[i] === "e") {
       hasil.e++;
-    } else if (kata[i] === "o") {
+    } else if (huruf[i] === "o") {
       hasil.o++;
     }
   }
+  // kita akan mencetak hasilnya dengan console.log menggunakan backtick agar bisa menjalankan perintah tanpa terputus
   console.log(`Jumlah huruf vokal
   ------------------
   A: ${hasil.a}
@@ -35,4 +40,5 @@ const hitungVokalSempurna = () => {
   return hasil;
 };
 
+// kita menjalankan function hitungVokalSempurna
 hitungVokalSempurna();
