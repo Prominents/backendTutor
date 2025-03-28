@@ -1,28 +1,40 @@
-# Tutorial Backend with Node.js:desktop_computer:
-## About Node.js®
+# Backend Tutorial with Node.js:desktop_computer:
+## About This Program
 
-Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser.
+This program demonstrates a basic Node.js server implementation using Express framework. It creates a simple web server that listens on port 3000 and provides various endpoints to interact with JavaScript files.
 
-Node.js lets developers use JavaScript to write command line tools and for server-side scripting. The ability to run JavaScript code on the server is often used to generate dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a "JavaScript everywhere" paradigm, unifying web-application development around a single programming language, as opposed to using different languages for the server- versus client-side programming.
+## Technologies Used
 
-## Basic Node.js
+1. **Node.js**: JavaScript runtime environment
+2. **Express.js**: Web application framework for Node.js
+3. **Child Process**: Module for executing shell commands
+4. **File System (fs)**: Module for file operations
+5. **Path**: Module for handling file paths
 
-As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. In the following "hello world" example, many connections can be handled concurrently. Upon each connection, the callback is fired, but if there is no work to be done, Node.js will sleep.
+## How to Run
 
-```
-const http = require('http');
+1. Make sure Node.js is installed on your system
+2. Clone or download the repository
+3. Open terminal and navigate to the project directory
+4. Install dependencies by running:
+   ```bash
+   npm install express
+   ```
+5. Start the server by running:
+   ```bash
+   node index.js
+   ```
+6. The server will start and you can access it at:
+   ```bash
+   http://localhost:3000
+   ```
+7. The main page will show a list of available JavaScript files that can be executed
+8. Click on any file link to execute the corresponding script
 
-const hostname = '127.0.0.1';
-const port = 3000;
+## Key Features
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World');
-});
-
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
-
-```
+1. **File Execution**: Ability to run JavaScript files from the web interface
+2. **Error Handling**: Proper error handling for file operations and script execution
+3. **Dynamic Routing**: Routes are created dynamically based on available files
+4. **Logging**: Detailed logging of script execution and errors
+5. **Modular Structure**: Easy to extend and add new functionality
